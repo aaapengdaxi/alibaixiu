@@ -40,7 +40,8 @@
           return
         };
         if(password.trim() == ''){
-          alert('请输入密码')
+          alert('请输入密码');
+          return;
         };
         $.ajax({
           type:'post',
