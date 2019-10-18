@@ -36,9 +36,9 @@
               <h3 class="panel-title">站点内容统计：</h3>
             </div>
             <ul class="list-group">
-              <li class="list-group-item"><strong>10</strong>篇文章（<strong>2</strong>篇草稿）</li>
-              <li class="list-group-item"><strong>6</strong>个分类</li>
-              <li class="list-group-item"><strong>5</strong>条评论（<strong>1</strong>条待审核）</li>
+              <li class="list-group-item" id="articleCount"></li>
+              <li class="list-group-item" id="categoryCount"></li>
+              <li class="list-group-item" id="commentCount"></li>
             </ul>
           </div>
         </div>
@@ -84,9 +84,22 @@
       </li>
     </ul>
   </div>
-
+  <!-- 文章数量模板 -->
+  <script type='text/html' id="articleTpl">
+    <strong>{{postCount}}</strong>篇文章(<strong>{{draftCount}}</strong>篇草稿)
+  </script>
+  <!-- 分类数量模板 -->
+  <script type='text/html' id="categoryTpl">
+    <strong>{{categoryCount}}</strong>个分类
+  </script>
+  <!-- 评论数量模板 -->
+  <script type='text/html' id="commentTpl">
+    <strong>{{commentCount}}</strong>条评论
+  </script>
   <script src="../assets/vendors/jquery/jquery.js"></script>
   <script src="../assets/vendors/bootstrap/js/bootstrap.js"></script>
   <script src="../assets/js/common.js"></script>
+  <script src="../assets/vendors/art-template/template-web.js"></script>
+  <script src="../assets/js/index.js"></script>
 </body>
 </html>

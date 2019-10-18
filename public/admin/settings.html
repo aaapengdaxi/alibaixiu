@@ -30,9 +30,10 @@
           <label for="site_logo" class="col-sm-2 control-label">网站图标</label>
           <div class="col-sm-6">
             <label class="form-image">
-              <input type="file">
-              <img src="../assets/img/logo.png">
+              <input type="file" id="logo">
+              <img src="../assets/img/logo.png" id="preview">
               <i class="mask fa fa-upload"></i>
+              <input type="hidden" name="logo" id="hiddenLogo" >
             </label>
           </div>
         </div>
@@ -101,5 +102,6 @@
 
   <script src="../assets/vendors/jquery/jquery.js"></script>
   <script src="../assets/vendors/bootstrap/js/bootstrap.js"></script>
+  <script src="../assets/js/settings.js"></script>
 </body>
 </html>

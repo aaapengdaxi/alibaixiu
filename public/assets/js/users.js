@@ -52,7 +52,7 @@ $.ajax({
         $('#userBox').html(html);
     }
 });
-//通过事件委托给编辑按钮添加点击事件
+//通过事件委托给编辑按钮添加点击事件 编辑功能
 $('#userBox').on('click','.edit',function(){
     let id   = $(this).attr('data-id');
     //向服务器发送请求,通过id查询用户
@@ -67,7 +67,7 @@ $('#userBox').on('click','.edit',function(){
         }
     })
 });
-//通过事件委托给修改表单添加表单提交事件
+//通过事件委托给修改表单添加表单提交事件 修改功能
 $('#modifyBox').on('submit','#modifyForm',function(){
     let id = $(this).attr('data-id');
     let formData = $(this).serialize();
