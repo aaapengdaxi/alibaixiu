@@ -35,3 +35,24 @@ $('#settingsForm').on('submit',function(){
     //阻止默认行为
     return false;
 });
+// 向服务区 请求网站设置数据
+$.ajax({
+    type:'get',
+    url:'/settings',
+    success:function(result){
+        console.log(result)
+        //如果有设置 显示在页面中
+        if(result){
+            //将logo 地址存在隐藏域中
+            $('#hiddenLogo').val(result.logo);
+            //将logo显示出来
+            $('#preview').attr('src',result.logo);
+            //站点名称 
+            $('input[name="title"]').val(result.title);
+            //是否开启评论功能
+            $('input[name="comment"]').prop('checked',result.comment);
+            //将评论是否经过人工批准
+            $('input[name="review"]').prop('checked',result.review)
+        }
+    }
+})

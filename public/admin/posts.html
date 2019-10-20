@@ -1,3 +1,9 @@
+<script src="/login/status"></script>
+<script>
+  if( !isLogin ){
+    location.href="login.html"
+  }
+</script>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -16,7 +22,7 @@
       <button class="btn btn-default navbar-btn fa fa-bars"></button>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="password-reset.html"><i class="fa fa-user"></i>修改密码</a></li>
-        <li><a href="login.html"><i class="fa fa-sign-out"></i>退出</a></li>
+        <li><a href="javascript:;" id="logout"><i class="fa fa-sign-out" ></i>退出</a></li>
       </ul>
     </nav>
     <div class="container-fluid">
@@ -109,7 +115,7 @@
 
         <td class="text-center">{{$value.state==1?'已发布':'未发布'}}</td>
         <td class="text-center">
-          <a href="javascript:;" class="btn btn-default btn-xs">编辑</a>
+          <a href="javascript:;" class="btn btn-default btn-xs edit" data-id="{{$value._id}}">编辑</a>
           <a href="javascript:;" class="btn btn-danger btn-xs">删除</a>
         </td>
       </tr>
@@ -133,7 +139,9 @@
     <option value="{{$value._id}}">{{$value.title}}</option>
     {{/each }}
   </script>
+  <script src="../assets/js/common.js"></script>
   <script src="../assets/js/posts.js"></script>
+
 </body>
 
 </html>

@@ -13,3 +13,14 @@ $('#logout').on('click',function(){
       })
     };
 });
+//向服务器请求对应的用户信息
+$.ajax({
+  type:'get',
+  url:`/users/${userId}`,
+  success:function(result){
+    console.log(result)
+    $('.profile .avatar').attr('src',result.avatar);
+    $('.profile .name').html(result.nickName);
+    
+  }
+})

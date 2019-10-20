@@ -39,6 +39,14 @@ $("#filterForm").on("submit", function() {
   //阻止默认提交行为
   return false;
 });
+//给编辑按钮添加点击事件
+$('#postsBox').on('click','.edit',function(){
+    let id =$(this).attr('data-id');
+    location.href = 'post-edit.html?id='+id;
+});
+
+
+
 
 function dateForMat(date) {
   date = new Date(date);
